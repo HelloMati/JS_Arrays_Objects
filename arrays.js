@@ -9,8 +9,9 @@ stations = ["Dundee", "Edinburgh", "North Berwick", "Newcastle", "York", "Leeds"
  * The East Coast Main Line doesn't stop at Peterborough! Add London Kings Cross to the end of the array to complete the line.
  */
 
-// console.log(stations);
+stations.push("Kings Cross")
 
+console.log(stations);
 
 
 /**
@@ -18,8 +19,9 @@ stations = ["Dundee", "Edinburgh", "North Berwick", "Newcastle", "York", "Leeds"
  * It doesn't go as far as Dundee either, so remove it from the start of the array.
  */
 
-// console.log(stations);
+stations.shift();
 
+console.log(stations);
 
 
 /**
@@ -27,9 +29,9 @@ stations = ["Dundee", "Edinburgh", "North Berwick", "Newcastle", "York", "Leeds"
  * How many stations are on the line?
  */
 
-stationCount = null;
+stationCount = stations.length
 
-// console.log("There are " + stationCount + " stations.");
+console.log("There are " + stationCount + " stations.");
 
 
 
@@ -38,9 +40,9 @@ stationCount = null;
  * Which station is the third stop?
  */
 
-thirdStation = null;
+thirdStation = stations[2];
 
-// console.log("The third station is " + thirdStation);
+console.log("The third station is " + thirdStation);
 
 
 
@@ -49,7 +51,9 @@ thirdStation = null;
  * Someone put the wrong Berwick on the timetable! Update "North Berwick" to "Berwick-upon-Tweed".
  */
 
-// console.log(stations);
+stations[2] = "Berwick-upon-Tweed";
+
+console.log(stations);
 
 
 
@@ -58,7 +62,9 @@ thirdStation = null;
  * How did Leeds get on there? Better remove it.
  */
 
-// console.log(stations);
+delete stations[4]
+
+console.log(stations);
 
 
 
@@ -67,7 +73,11 @@ thirdStation = null;
  * We forgot about Darlington! Add it to the route between Newcastle and York.
  */
 
-// console.log(stations);
+//let index = stations.indexOf("Newcastle") + 1;
+
+stations.splice(4, 0, "Darlington");
+
+console.log(stations);
 
 
 
@@ -76,12 +86,20 @@ thirdStation = null;
  * Is Durham one of the stops?
  */
 
-stoppingAtDurham = null;
+stoppingAtDurham = stations.includes("Durham");
 
-// console.log(stoppingAtDurham);
+console.log(stoppingAtDurham);
 
 
 /**
  * Q9.
  * If we are stopping at Durham, print "Yay Durham!" to the terminal. If not print "Aww...".
  */
+
+stoppingAtDurham = stations.includes("Durham");
+
+if (stoppingAtDurham) { 
+    console.log("Yay Durham!");
+} else {
+    console.log("Aww...");
+}
